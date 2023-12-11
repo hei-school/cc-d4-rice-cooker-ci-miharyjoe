@@ -61,3 +61,34 @@ A simple command-line interface (CLI) application for a rice cooker implemented 
 
 7. **Quit:**
    - Exits the Rice Cooker CLI.
+
+## Installation
+Clone or download the Kotlin branch of the project from the repository.
+
+   ```bash
+   git clone -b feature/typescript https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe.git
+   ```
+
+- Install NodeJs : follow steps [here](https://nodejs.org/en/download)
+
+- Install dependencies :
+```
+cd cc-d2-my-rice-cooker-miharyjoe
+npm i
+```
+
+- Compile your code :
+```
+npm run compile
+```
+
+- Run the app :
+```
+node ./dist/MainRiceCooker.js
+```
+
+## Linter
+
+We use Google Typescript Linter, [here](https://github.com/google/gts?fbclid=IwAR0o0gbV_gbbpv3rX8B2xFuhTkmr5Ee_qxV9Rpv7KI0egUVXBaUhskkvgps).
+
+
