@@ -51,12 +51,4 @@ A simple command-line interface (CLI) application for a rice cooker implemented 
 7. **Quit:**
    - Exits the Rice Cooker CLI.
 
-
-## Code Branches
-
-You can find the source code for each language in the following branches:
-
-- [Kotlin Branch](https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe/tree/feature/kotlin)
-- [Typescript Branch](https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe/tree/feature/typescript)
-- [Dart Branch](https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe/tree/feature/dart)
-
+   
