@@ -1,6 +1,5 @@
 # Rice Cooker CLI
-A simple command-line interface (CLI) application for a rice cooker implemented in Kotlin, Typescript,
-Dart.
+A simple command-line interface (CLI) application for a rice cooker implemented in Dart.
 
 ## Functionality
 
