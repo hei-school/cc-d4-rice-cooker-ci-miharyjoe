@@ -140,15 +140,15 @@ function main(): void {
       switch (userInput) {
         case '1':
           const riceQuantity = readInt(
-            'Enter quantity of rice (can be null): '
+            'Enter quantity of rice : '
           );
           const waterQuantity = readInt(
-            'Enter quantity of water (can be null): '
+            'Enter quantity of water : '
           );
           const temperature = readInt(
-            'Enter temperature (optional, default 100°C): '
+            'Enter temperature: '
           );
-          const timer = readInt('Enter timer (optional, default 30min): ');
+          const timer = readInt('Enter timer: ');
 
           cooker.setupCooking(riceQuantity, waterQuantity, temperature, timer);
           break;
