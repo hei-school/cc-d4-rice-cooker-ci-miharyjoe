@@ -2,9 +2,16 @@
   "name": "cc-d2-my-rice-cooker-miharyjoe",
   "version": "1.0.0",
   "description": "A simple command-line interface (CLI) application for a rice cooker implemented in Typescript.",
-  "main": "index.js",
+  "main": "MainRiceCooker.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -18,8 +25,13 @@
   },
   "homepage": "https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe#readme",
   "devDependencies": {
-    "@types/node": "^20.10.4",
-    "typescript": "^5.3.3"
+    "@types/node": "20.8.2",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "gts": "^5.2.0",
+    "prettier": "3.1.1",
+    "typescript": "~5.2.0"
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
