@@ -1,0 +1,27 @@
+{
+  "name": "cc-d2-my-rice-cooker-miharyjoe",
+  "version": "1.0.0",
+  "description": "A simple command-line interface (CLI) application for a rice cooker implemented in Typescript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe/issues"
+  },
+  "homepage": "https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
