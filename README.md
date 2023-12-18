@@ -83,7 +83,7 @@ Download and install one of these IDEs to start using Kotlin.
 3. Compile and run the code using the following commands:
 
    ```bash
-   cd cc-d2-my-rice-cooker-miharyjoe
+   cd cc-d4-rice-cooker-ci-miharyjoe
 
    kotlinc Main.kt -include-runtime -d RiceCookerCLI.jar
 
