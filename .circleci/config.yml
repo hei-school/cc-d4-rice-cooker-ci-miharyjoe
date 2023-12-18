@@ -8,6 +8,11 @@ jobs:
     steps:
       - checkout
 
+      # Ensure the gradlew script has execute permissions
+      - run:
+          name: Grant Execute Permissions
+          command: chmod +x ./gradlew
+
       # Install dependencies and set up the Kotlin environment
       - run:
           name: Install Dependencies
