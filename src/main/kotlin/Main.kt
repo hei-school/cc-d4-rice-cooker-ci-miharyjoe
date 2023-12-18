@@ -15,19 +15,19 @@ fun main() {
         println("7. Quit")
 
         print("Enter the number of the command: ")
-        when (val userInput = readLine()) {
+        when (val userInput = readlnOrNull()) {
             "1" -> {
                 print("Enter quantity of rice (can be null): ")
-                val riceQuantity = readLine()?.toIntOrNull()
+                val riceQuantity = readlnOrNull()?.toIntOrNull()
 
                 print("Enter quantity of water (can be null): ")
-                val waterQuantity = readLine()?.toIntOrNull()
+                val waterQuantity = readlnOrNull()?.toIntOrNull()
 
                 print("Enter temperature (optional, default 100°C): ")
-                val temperature = readLine()?.toIntOrNull()
+                val temperature = readlnOrNull()?.toIntOrNull()
 
                 print("Enter timer (optional, default 30min): ")
-                val timer = readLine()?.toIntOrNull()
+                val timer = readlnOrNull()?.toIntOrNull()
 
                 cooker.setupCooking(riceQuantity, waterQuantity, temperature, timer)
             }

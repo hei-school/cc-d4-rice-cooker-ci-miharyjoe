@@ -1,6 +1,7 @@
 package org.example
 
-import java.util.*
+import java.util.Timer
+import java.util.TimerTask
 
 class RiceCooker {
     private var quantityOfRice: Int? = null
@@ -12,7 +13,12 @@ class RiceCooker {
     private var currentTimer: Timer? = null
     private var isCooking = false
 
-    fun setupCooking(riceQuantity: Int?, waterQuantity: Int?, temperature: Int?, timer: Int?) {
+    fun setupCooking(
+        riceQuantity: Int?,
+        waterQuantity: Int?,
+        temperature: Int?,
+        timer: Int?,
+    ) {
         this.quantityOfRice = riceQuantity
         this.quantityOfWater = waterQuantity
         this.currentTemperature = temperature ?: this.temperature
@@ -29,13 +35,16 @@ class RiceCooker {
 
         currentTimer?.cancel()
         currentTimer = Timer()
-        currentTimer?.schedule(object : TimerTask() {
-            override fun run() {
-                currentStatus = "Cooking complete. Starting warm mode."
-                isCooking = false
-                warmMode()
-            }
-        }, timer * 60 * 1000L)
+        currentTimer?.schedule(
+            object : TimerTask() {
+                override fun run() {
+                    currentStatus = "Cooking complete. Starting war m mode."
+                    isCooking = false
+                    warmMode()
+                }
+            },
+            timer * 60 * 1000L,
+        )
 
         isCooking = true
         currentStatus = "Cooking started. Timer set for $timer minutes."
@@ -69,13 +78,16 @@ class RiceCooker {
             println("Already cooking. Cannot resume.")
         } else {
             currentTimer = Timer()
-            currentTimer?.schedule(object : TimerTask() {
-                override fun run() {
-                    currentStatus = "Cooking complete. Starting warm mode."
-                    isCooking = false
-                    warmMode()
-                }
-            }, timer * 60 * 1000L)
+            currentTimer?.schedule(
+                object : TimerTask() {
+                    override fun run() {
+                        currentStatus = "Cooking complete. Starting warm mode."
+                        isCooking = false
+                        warmMode()
+                    }
+                },
+                timer * 60 * 1000L,
+            )
             isCooking = true
             currentTemperature = temperature
             currentStatus = "Cooking resumed. Timer set for $timer minutes."
