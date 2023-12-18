@@ -6,10 +6,10 @@ A simple command-line interface (CLI) application for a rice cooker implemented 
 
 1. **Setup Cooking:**
 
-   - Add quantity of rice (can be null).
-   - Add quantity of water (can be null).
-   - Add temperature (optional, default 100°C).
-   - Add timer (optional, default 30 minutes).
+   - Add quantity of rice.
+   - Add quantity of water.
+   - Add temperature .
+   - Add timer.
 
 2. **Start Cooking:**
 
@@ -62,24 +62,26 @@ A simple command-line interface (CLI) application for a rice cooker implemented 
 7. **Quit:**
    - Exits the Rice Cooker CLI.
 
+## Requirement
+
+**Install Go:**
+
+Make sure you have Go installed on your system. You can download and install it from the official Go website: [https://golang.org/dl/](https://golang.org/dl/)
+
 ## Installation
 
-1. **Install Go:**
+**Clone the Repository:**
 
-   Make sure you have Go installed on your system. You can download and install it from the official Go website: [https://golang.org/dl/](https://golang.org/dl/)
+```bash
+git clone -b feature/go https://github.com/hei-school/cc-d4-rice-cooker-ci-miharyjoe.git
 
-2. **Clone the Repository:**
+cc-d4-rice-cooker-ci-miharyjoe
 
-   ```bash
-   git clone -b feature/go https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe.git
+go run MainRiceCooker.go
+```
 
-   cd cc-d2-my-rice-cooker-miharyjoe
+- The linter i use [here](https://golangci-lint.run/)
 
-   go run MainRiceCooker.go
-   ```
-
-   - The linter i use [here](https://golangci-lint.run/)
-
-   ```bash
-   golangci-lint run
-   ```
+```bash
+golangci-lint run
+```
