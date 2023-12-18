@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class RiceCookerTest{
+class RiceCookerTest {
     @Test
     fun testSetupCooking() {
         val riceCooker = RiceCooker()
@@ -23,7 +23,6 @@ class RiceCookerTest{
         riceCooker.setupCooking(1, 0, 200, 10)
         riceCooker.startCooking()
 
-
         assertEquals("Insufficient water. Please add water before starting cooking.", riceCooker.currentStatus)
     }
 
@@ -36,7 +35,6 @@ class RiceCookerTest{
         assertTrue(riceCooker.isCooking)
         assertEquals("Cooking started. Timer set for 10 minutes.", riceCooker.currentStatus)
     }
-
 
     @Test
     fun testWarmMode() {
@@ -102,5 +100,4 @@ class RiceCookerTest{
         assertEquals("Setup completed. Ready to start cooking.", riceCooker.currentStatus)
         assertEquals(200, riceCooker.currentTemperature)
     }
-
 }

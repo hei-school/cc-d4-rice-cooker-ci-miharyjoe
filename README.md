@@ -78,7 +78,7 @@ Download and install one of these IDEs to start using Kotlin.
 # The guide style I use
 
 And [Ktlint-gradle]("https://github.com/JLLeitschuh/ktlint-gradle?tab=readme-ov-file#how-to-use)
-to launch the format code :
+To launch the format code :
    ```bash
    ./gradlew KtlintFormat
    

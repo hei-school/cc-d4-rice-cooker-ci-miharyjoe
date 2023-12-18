@@ -58,7 +58,6 @@ class RiceCooker {
         }
     }
 
-
     fun warmMode() {
         try {
             if (quantityOfWater == null || quantityOfWater == 0) {
@@ -97,7 +96,7 @@ class RiceCooker {
     fun resumeCooking() {
         try {
             if (isCooking) {
-                currentStatus ="Already cooking. Cannot resume."
+                currentStatus = "Already cooking. Cannot resume."
                 println("Already cooking. Cannot resume.")
             } else {
                 currentTimer = Timer()
