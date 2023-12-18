@@ -1,5 +1,7 @@
 # Rice Cooker CLI
 
+
+
 A simple command-line interface (CLI) application for a rice cooker implemented in Kotlin.
 
 ## Functionality
@@ -51,13 +53,24 @@ A simple command-line interface (CLI) application for a rice cooker implemented 
 
 7. **Quit:**
     - Exits the Rice Cooker CLI.
+## Requierement :
+Installing java jdk 17
+
+Installing IntelIJ
 
 ## How to Run
+1- Open the file project you clone to your IntelIj
 
-1. Ensure you have Kotlin installed on your machine.
-2. Save the code in a Kotlin file (e.g., `RiceCookerCLI.kt`).
-3. Open a terminal and navigate to the directory containing the file.
-4. Compile and run the code using the following commands:
+2- Start the application in Main.kt
+
+3- Enjoy after!!
+
+# Code Format :
+
+[Ktlint-gradle]("https://github.com/JLLeitschuh/ktlint-gradle?tab=readme-ov-file#how-to-use)
+
+to launch the format code :
    ```bash
-   kotlinc RiceCookerCLI.kt -include-runtime -d RiceCookerCLI.jar
-   java -jar RiceCookerCLI.jar
+   ./gradlew KtlintFormat
+   
+   ./gradlew KtlintCheck
