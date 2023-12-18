@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
 	"time"
 )
 
 type RiceCooker struct {
-	quantityOfRice     *int
-	quantityOfWater    *int
+	quantityOfRice     int
+	quantityOfWater    int
 	temperature        int
 	timer              int
 	currentStatus      string
@@ -16,30 +18,43 @@ type RiceCooker struct {
 	isCooking          bool
 }
 
-func (rc *RiceCooker) setupCooking(riceQuantity, waterQuantity, temperature, timer *int) {
+func (rc *RiceCooker) setupCooking(riceQuantity, waterQuantity, temperature, timer int) {
+	if riceQuantity <= 0 || waterQuantity <= 0 {
+		logError("Quantity of rice and water must be greater than 0 during setup.")
+		return
+	}
+
 	rc.quantityOfRice = riceQuantity
 	rc.quantityOfWater = waterQuantity
-	if temperature != nil {
-		rc.currentTemperature = *temperature
-	} else {
-		rc.currentTemperature = rc.temperature
+
+	if temperature <= 0 {
+		logError("Temperature must be greater than 0 during setup.")
+		return
 	}
-	if timer != nil {
-		rc.timer = *timer
+
+	rc.temperature = temperature
+
+	if timer <= 0 {
+		logError("Timer must be greater than 0 during setup.")
+		return
 	}
+
+	rc.timer = timer
+
 	rc.currentStatus = "Setup completed. Ready to start cooking."
 	fmt.Println("Setup completed. Ready to start cooking.")
 }
 
 func (rc *RiceCooker) startCooking() {
-	if rc.quantityOfWater == nil || *rc.quantityOfWater == 0 {
-		fmt.Println("Error: Insufficient water. Please add water before starting cooking.")
+	if rc.quantityOfWater <= 0 {
+		logError("Insufficient water. Please add water before starting cooking.")
 		return
 	}
 
 	if rc.currentTimer != nil {
 		rc.currentTimer.Stop()
 	}
+
 	rc.currentTimer = time.NewTimer(time.Duration(rc.timer) * time.Minute)
 
 	go func() {
@@ -55,8 +70,8 @@ func (rc *RiceCooker) startCooking() {
 }
 
 func (rc *RiceCooker) warmMode() {
-	if rc.quantityOfWater == nil || *rc.quantityOfWater == 0 {
-		fmt.Println("Error: Insufficient water. Please add water before starting Warm mode.")
+	if rc.quantityOfWater <= 0 {
+		logError("Insufficient water. Please add water before starting Warm mode.")
 		return
 	}
 	rc.currentTemperature = 60
@@ -101,8 +116,21 @@ func (rc *RiceCooker) checkStatus() {
 	fmt.Printf("Temperature: %d °C\n", rc.currentTemperature)
 }
 
+func logError(message string) {
+	logFile, err := os.OpenFile("error_log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		fmt.Println("Error opening log file:", err)
+		return
+	}
+	defer logFile.Close()
+
+	log.SetOutput(logFile)
+	log.Println("Error:", message)
+	fmt.Println("Error:", message)
+}
+
 func main() {
-	cooker := RiceCooker{}
+	cooker := &RiceCooker{}
 
 	fmt.Println("Welcome to the Rice Cooker CLI!")
 
@@ -121,15 +149,34 @@ func main() {
 
 		switch userInput {
 		case "1":
-			var riceQuantity, waterQuantity, temperature, timer *int
-			fmt.Print("Enter quantity of rice (can be null): ")
-			fmt.Scanln(&riceQuantity)
-			fmt.Print("Enter quantity of water (can be null): ")
-			fmt.Scanln(&waterQuantity)
-			fmt.Print("Enter temperature (optional, default 100°C): ")
-			fmt.Scanln(&temperature)
-			fmt.Print("Enter timer (optional, default 30min): ")
-			fmt.Scanln(&timer)
+			var riceQuantity, waterQuantity, temperature, timer int
+			fmt.Print("Enter quantity of rice: ")
+			_, err := fmt.Scanln(&riceQuantity)
+			if err != nil {
+				logError("Invalid input. Please enter a valid number.")
+				break
+			}
+
+			fmt.Print("Enter quantity of water: ")
+			_, err = fmt.Scanln(&waterQuantity)
+			if err != nil {
+				logError("Invalid input. Please enter a valid number.")
+				break
+			}
+
+			fmt.Print("Enter temperature: ")
+			_, err = fmt.Scanln(&temperature)
+			if err != nil {
+				logError("Invalid input. Please enter a valid number.")
+				break
+			}
+
+			fmt.Print("Enter timer: ")
+			_, err = fmt.Scanln(&timer)
+			if err != nil {
+				logError("Invalid input. Please enter a valid number.")
+				break
+			}
 
 			cooker.setupCooking(riceQuantity, waterQuantity, temperature, timer)
 
