@@ -23,7 +23,7 @@ fun main() {
                 print("Enter quantity of water (can be null): ")
                 val waterQuantity = readlnOrNull()?.toIntOrNull()
 
-                print("Enter temperature (optional, default 100°C): ")
+                print("Enter temperature: ")
                 val temperature = readlnOrNull()?.toIntOrNull()
 
                 print("Enter timer (optional, default 30min): ")
