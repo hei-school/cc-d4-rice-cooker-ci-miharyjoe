@@ -1,0 +1,17 @@
+name: rice_cooker_cli
+description: A Dart CLI app for a rice cooker
+
+# Modify the version according to your needs
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+# Add your dependencies here if you have any
+# For example, if you have additional dependencies for the main app
+
+dev_dependencies:
+  test: any
+
+# Other configurations, if needed
