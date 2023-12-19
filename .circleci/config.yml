@@ -9,7 +9,7 @@ jobs:
       - checkout
 
       # Set up Dart environment
-      - run: dart pub
+      - run: dart pub add
 
       # Run tests
       - run: RiceCookerTest.dart
