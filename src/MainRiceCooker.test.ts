@@ -7,17 +7,17 @@ describe('RiceCooker', () => {
   });
 
   test('should set up cooking', () => {
-    cooker.setupCooking(1, 2, 80, 20);
+    cooker.setupCooking(1, 2, 80, 1);
 
     expect(cooker['quantityOfRice']).toBe(1);
     expect(cooker['quantityOfWater']).toBe(2);
     expect(cooker['currentTemperature']).toBe(80);
-    expect(cooker['timer']).toBe(20);
+    expect(cooker['timer']).toBe(1);
     expect(cooker['currentStatus']).toBe('Setup completed. Ready to start cooking.');
   });
 
   test('should start cooking', () => {
-    cooker.setupCooking(1, 2, 80, 20);
+    cooker.setupCooking(1, 2, 80, 1);
     cooker.startCooking();
 
     expect(cooker['isCooking']).toBe(true);
@@ -26,7 +26,7 @@ describe('RiceCooker', () => {
   });
 
   test('should pause cooking', () => {
-    cooker.setupCooking(1, 2, 80, 20);
+    cooker.setupCooking(1, 2, 80, 1);
     cooker.startCooking();
     cooker.pauseCooking();
 
@@ -36,7 +36,7 @@ describe('RiceCooker', () => {
   });
 
   test('should resume cooking', () => {
-    cooker.setupCooking(1, 2, 80, 20);
+    cooker.setupCooking(1, 2, 80, 1);
     cooker.startCooking();
     const originalTimer = cooker['currentTimer'];
     cooker.pauseCooking();
@@ -49,7 +49,7 @@ describe('RiceCooker', () => {
   });
 
   test('should activate warm mode', () => {
-    cooker.setupCooking(1, 2, 80, 20);
+    cooker.setupCooking(1, 2, 80, 1);
     cooker.warmMode();
 
     expect(cooker['currentTemperature']).toBe(60);
@@ -57,7 +57,7 @@ describe('RiceCooker', () => {
   });
 
   test('should check status', () => {
-    cooker.setupCooking(1, 2, 80, 20);
+    cooker.setupCooking(1, 2, 80, 1);
     const consoleSpy = jest.spyOn(console, 'log');
     cooker.checkStatus();
 
