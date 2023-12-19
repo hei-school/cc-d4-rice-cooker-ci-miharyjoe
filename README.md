@@ -66,7 +66,7 @@ A simple command-line interface (CLI) application for a rice cooker implemented 
 Clone or download the Kotlin branch of the project from the repository.
 
    ```bash
-   git clone -b feature/typescript https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe.git
+   git clone -b feature/typescript https://github.com/hei-school/cc-d4-rice-cooker-ci-miharyjoe.git
    ```
 
 - Install NodeJs : follow steps [here](https://nodejs.org/en/download)
@@ -87,6 +87,10 @@ npm run compile
 node ./dist/MainRiceCooker.js
 ```
 
+- Run test:
+```
+npm run test
+```
 ## Linter
 
 We use Google Typescript Linter, [here](https://github.com/google/gts?fbclid=IwAR0o0gbV_gbbpv3rX8B2xFuhTkmr5Ee_qxV9Rpv7KI0egUVXBaUhskkvgps).
