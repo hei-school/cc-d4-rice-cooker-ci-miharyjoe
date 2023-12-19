@@ -180,3 +180,7 @@ function main(): void {
 }
 
 main();
+
+
+
+export { RiceCooker, main };
