@@ -72,11 +72,11 @@ A simple command-line interface (CLI) application for a rice cooker implemented 
 2. **Clone the Repository:**
 
    ```bash
-   git clone -b feature/dart https://github.com/hei-school/cc-d2-my-rice-cooker-miharyjoe.git
+   git clone -b feature/dart https://github.com/hei-school/cc-d4-rice-cooker-ci-miharyjoe.git
    ```
 
    ```bash
-     cd cc-d2-my-rice-cooker-miharyjoe
+     cd cc-d4-rice-cooker-ci-miharyjoe
 
      dart MainRiceCooker.dart
    ```
